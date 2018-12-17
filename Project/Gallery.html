@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gallery</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link href="cookies.css" rel="stylesheet">
+    <!--Javascript for random image when loading the image-->
+    <script src="Gallery.js"></script>
+    
+  </head>
+  <body>
+    <!--Navigation-->
+    <nav id="top">
+    	<ul>
+    		<li><img id="logo" src="http://res.publicdomainfiles.com/pdf_view/129/13968371414517.png" alt="Cookie Logo"></li>
+    		<li class="nav_bttn"><a href="index.html" title="">Home</a></li>
+            <li class="nav_bttn"><a href="AboutUs.html" title="">About</a></li>
+            <li class="nav_bttn"><a href="Contacts.html" title="">Contacts</a></li>
+            <li class="nav_bttn"><a href="Sources.html" title="">Sources</a></li>
+            <li class="nav_bttn"><a href="Gallery.html" title="">Gallery</a></li>
+            <li class="nav_bttn"><a href="Sites.html" title="">Sites</a></li>
+            <li id="username" class="nav_bttn"><h5 id="user"></h5><a href="#" onclick="changeuser()">change</a></li>
+
+    	</ul>
+    </nav>
+    <!--Content-->
+    <div class="content">
+        <h1>Look at our Random Gallery!</h1>
+        <!--Images-->
+        <div class="grid-gallery">
+            <a href="#" onclick="resize1()"><img Id="Gallery" src="Gallery/cookie1.jpg" alt="Cookie in a plate"></a>
+            <a href="#" onclick="resize2()"><img Id="Gallery2" src="Gallery/cookie1.jpg" alt="Cookie in a plate"></a>
+            <img Id="Gallery3" src="Gallery/cookie1.jpg" alt="Cookie in a plate">
+        </div>
+        
+        <div><button id="Gallerybutton">Next</button></div>
+        
+    </div>
+    <div class="internal_link"><a href="#top">
+        <img class="internal_logo" src="https://s1.piq.land/2018/09/02/HvThGxAi0AMu2vBJhQObBZuG_400x400.png" alt="Cookie">
+        <p>Top</p>
+        </a>
+    </div>
+    <div class="footer">
+        <p>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use</p>
+        <p id="lastmod"></p>
+    </div>
+
+    <!--ALL of the javascript are loaded last to enable loading the page first-->
+    <!--Username script-->
+    <script src="username.js"></script>
+
+    <!--This is for the Gallery Size functions-->
+    <script src="GallerySize.js"></script>
+
+    <!--lastmod script-->
+    <script>
+        //prints out the last modification of the page
+        var lastmodded = new Date(document.lastModified);
+        document.getElementById("lastmod").innerHTML = "Last Modified: " + lastmodded;
+    </script>
+
+    <!--Javascript for random images for the button-->
+    <script>
+        //arrays for the pictures and description
+        var randImage = [1,2,3,4,5,6];
+        var description = ["Cookie in a plate", "Stack of cookies", "Chocolate cookie", "Cookies placed on two plates", "Chocolate cookie and a coffee", "3 stacked cookies"]
+        var index =0;
+        //random image for image1
+        function randomize1 () {
+            var image1 = document.getElementById("Gallery");
+            //Use random to select the numbers for the images
+            index = Math.floor(Math.random() * 6);
+            image1.setAttribute("src", 'Gallery/cookie' + randImage [index] + ".jpg");
+            //using index to also change the alt of the picture when changed
+            image1.setAttribute("alt", description [index]);
+        }
+        //random image for image2
+        function randomize2 () {
+            image2 = document.getElementById("Gallery2");
+            //Use random to select the numbers for the images
+            index = Math.floor(Math.random() * 6);
+            image2.setAttribute("src", 'Gallery/cookie' + randImage [index] + ".jpg");
+            //using index to also change the alt of the picture when changed
+            image2.setAttribute("alt", description [index]);
+        }
+        //random image for image3
+        function randomize3 () {
+            image3 = document.getElementById("Gallery3");
+            //Use random to select the numbers for the images
+            index = Math.floor(Math.random() * 6);
+            image3.setAttribute("src", 'Gallery/cookie' + randImage [index] + ".jpg");
+            //using index to also change the alt of the picture when changed
+            image3.setAttribute("alt", description [index]);
+        }
+        //starts getting the function when the button "Gallerybutton" is clicked
+        function start() {
+            var image1;
+            var image2;
+            var image3;
+            document.getElementById("Gallerybutton").addEventListener("click", randomize1,false);
+            document.getElementById("Gallerybutton").addEventListener("click", randomize2,false);
+            document.getElementById("Gallerybutton").addEventListener("click", randomize3,false);
+        }
+        window.addEventListener("load",start,false);
+    </script>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </body>
+</html>

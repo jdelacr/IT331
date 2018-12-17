@@ -1,0 +1,36 @@
+
+.gridPlayer {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+}
+body{
+    padding: 20px;
+    background-color: pink;
+}
+
+button {
+    height: auto;
+    width: auto;
+    background-color: white;
+    border: 2px solid pink;
+    border-radius: 15px;
+    transition: background-color .2s ease-in, color .2s ease-in;
+}
+
+button:hover {
+    background-color: rgb(254, 160, 202);;
+    color: white;
+}
+
+button:active {
+	transform: translateY(4px);
+}
+
+img{
+    height: 250px;
+    width: 250px;
+}
+
+img:active {
+    transform: translateY(15px);
+}

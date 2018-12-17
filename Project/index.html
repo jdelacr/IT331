@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Homepage: Cookies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<!--BootstrapCDN latest code at getboostrap.com-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link href="cookies.css" rel="stylesheet">
+
+<!--Jquery CSS for the datepicker-->
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+
+<!--CDN theme for the form validator-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css"
+    rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!--Navigation-->
+    <nav id="top">
+    	<ul>
+    		<li><img id="logo" src="http://res.publicdomainfiles.com/pdf_view/129/13968371414517.png" alt="Cookie Logo"></li>
+    		<li class="nav_bttn"><a href="index.html" title="">Home</a></li>
+            <li class="nav_bttn"><a href="AboutUs.html" title="">About</a></li>
+            <li class="nav_bttn"><a href="Contacts.html" title="">Contacts</a></li>
+            <li class="nav_bttn"><a href="Sources.html" title="">Sources</a></li>
+            <li class="nav_bttn"><a href="Gallery.html" title="">Gallery</a></li>
+            <li class="nav_bttn"><a href="Sites.html" title="">Sites</a></li>
+            <li id="username" class="nav_bttn"><h5 id="user"></h5><a href="#" onclick="changeuser()">change</a></li>
+
+    	</ul>
+    </nav>
+    <!--Content-->
+    <div class="content">
+    	<h1>Welcome to COOKIES!!</h1>
+    	<p>We love to eat cookies and so do you!</p>
+    	<p>To help us know who you are, please fill out our survey <a class="survey_link" href="#survey">form</a>:</p>
+        <div id="error-information"></div>
+    	<form id="survey" action="#" method="post">
+            <fieldset>
+                <legend>Information:</legend>
+                
+    		      <p><label>Name: <input class="name" type="text" name="name" data-validation="required" data-validation-error-msg="You didn't enter a name Friend!"></label></p>
+                  <p><label>Date of Birth: <input type="text" name="date" id="datepicker" data-validation="required" data-validation-error-msg="Please input a DOB"></label></p>
+    		      <p><label>Email Address: <input class="emailaddress" type="email" name="email" data-validation="email" data-validation-error-msg="You didn't enter an email Friend!"></label></p>
+                  <p><label>Favorite Color: <input type="color" name="color"></label></p>
+            </fieldset>
+        <br>
+            <fieldset>
+                <legend>Survey:</legend>
+            <p><label>How big of a COOKIE fan are you?
+                <select name="rating">
+                    <option selected>Okay</option>
+                    <option>Meh...</option>
+                    <option>Good</option>
+                    <option>Is alright</option>
+                    <option>ZOMG!!!</option>
+                </select>
+            </label></p>
+            <p>How did you hear about COOKIE?</p>
+            <p><label><input type="radio" name="heard" value="founded">GMU</label></p>
+            <p><label><input type="radio" name="heard" value="founded">Your Professor</label></p>
+            <p><label><input type="radio" name="heard" value="founded">What am I doing here?</label></p>
+            <p><label><input type="radio" name="heard" value="founded">What's a COOKIE? ಠ_ಠ</label></p>
+            <p><label><input type="radio" name="heard" value="founded">I'm just here for the free COOKIE ¯\_(ツ)_/¯</label></p>
+        </fieldset>
+        <br>
+            <fieldset>
+                <legend>Comment & Rating</legend>
+            <p><label>Love to tell how much COOKIE is great? COMMENT!! (<span id="pres-max-length">500</span> character left)<br>
+                <textarea id="txtcomment" class="comment" name="comments" placeholder="Tell us your comment!"></textarea>
+            </label></p>
+            <p>Check your favorite type of COOKIES!</p>
+            <p id="checkbox-requirement"></p>
+                <p><label>Butter <input type="checkbox" name="rate" value="rating" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg-container="#checkbox-requirement"></label>
+                <label>Peanut Butter <input type="checkbox" name="rate" value="rating"></label>
+                <label>Sugar <input type="checkbox" name="rate" value="rating"></label>
+                <label>Chocolate <input type="checkbox" name="rate" value="rating"></label>
+                <label>Nuts <input type="checkbox" name="rate" value="rating"></label>
+                <label>Others <input type="checkbox" name="rate" value="rating"></label></p>
+            <p>              
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </p>
+        </fieldset>
+        </form>
+    </div>
+    <div class="internal_link"><a href="#top">
+        <img class="internal_logo" src="https://s1.piq.land/2018/09/02/HvThGxAi0AMu2vBJhQObBZuG_400x400.png" alt="Cookie">
+        <p>Top</p>
+        </a>
+    </div>
+    <div class="footer">
+        <p>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use</p>
+        <p id="lastmod"></p>
+    </div>
+
+    <!--ALL of the javascript are loaded last to enable loading the page first-->
+    <!--Username script-->
+    <script src="username.js"></script>
+    <!--lastmod script-->
+    <script>
+        //prints out the last modification of the page
+        var lastmodded = new Date(document.lastModified);
+        document.getElementById("lastmod").innerHTML = "Last Modified: " + lastmodded;
+    </script>
+
+    <!--This is for the datepicker-->
+    <script src="jqueryui/external/jquery/jquery.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+
+    <script>
+            $('#datepicker').datepicker({
+                //Allow to change the month and year from the calendar
+                changeMonth: true,
+                changeYear: true,
+                //set the range of the year
+                yearRange: "1850: 2018"
+            });
+    </script>
+
+    <!--CDN for the jquery form validation-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script>
+        //This is for the validation 
+        $.validate({});
+
+        //This determines how many characters are left for the comment section
+        $("#txtcomment").restrictLength($("#pres-max-length"));
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

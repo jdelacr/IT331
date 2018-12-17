@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Contacts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<!--BootstrapCDN latest code at getboostrap.com-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link href="cookies.css" rel="stylesheet">
+</head>
+<body>
+    <!--Navigation-->
+    <nav id="top">
+			<ul>
+				<li><img id="logo" src="http://res.publicdomainfiles.com/pdf_view/129/13968371414517.png" alt="Cookie Logo"></li>
+				<li class="nav_bttn"><a href="index.html" title="">Home</a></li>
+				<li class="nav_bttn"><a href="AboutUs.html" title="">About</a></li>
+				<li class="nav_bttn"><a href="Contacts.html" title="">Contacts</a></li>
+				<li class="nav_bttn"><a href="Sources.html" title="">Sources</a></li>
+				<li class="nav_bttn"><a href="Gallery.html" title="">Gallery</a></li>
+				<li class="nav_bttn"><a href="Sites.html" title="">Sites</a></li>
+				<li id="username" class="nav_bttn"><h5 id="user"></h5><a href="#" onclick="changeuser()">change</a></li>
+	
+			</ul>
+		</nav>
+		<!--Content-->
+    <div class="content">
+    	<h1>MEET YOUR ADMINS!!</h1>
+    	<div class="speech-bubble">
+                <img class="avatar img-fluid" src="Assets/Cookie_re.png" alt="Justyn's Avatar">
+                <div class="info">
+    		    <h1>CRAZY COOKIE</h1>
+    	
+    		    <p>EMAIL: <a class="email" href="mailto:Justyn@Cookie.com?subject=feedback">Justyn@Cookie.com</a></p>
+                    <p>GENDER: Male</p>
+    				<p>RACE: Cookie</p>
+    				<p>BIO: Crazy cookie, also known as Jan Justyn Dela Cruz. He loves to eat all kind of COOKIEs but he can't. He's on a diet. Thus, he is crazy.</p>
+                </div>
+    	</div>
+    	<div class="speech-bubble">
+                <img class="avatar img-fluid" src="https://s1.piq.land/2014/04/15/cbOxKZHKzd4A1zRea0MxagFx_400x400.png" alt="Cookie's Avatar">
+                <div class="info">
+    		    <h1>COOKIE EATER</h1>
+    	
+    		    <p>EMAIL: <a class="email" href="mailto:CEater@Cookie.com?subject=feedback">CEater@Cookie.com</a></p>
+                    <p>GENDER: Unknown</p>
+    				<p>RACE: Cookie</p>
+                    <p>BIO: He is a cookie. As you can see on his profile that he is a cannibal to his own kind.</p>
+                </div>
+    	</div>
+    	<div class="speech-bubble">
+                <img class="avatar img-fluid" src="Assets/ginger.png" alt="ginger bread">
+                <div class="info">
+    		    <h1>GINGEE</h1>
+    		
+    		    <p>EMAIL: <a class="email" href="mailto:Gingee@Cookie.com?subject=feedback">Gingee@Cookie.com</a></p>
+                    <p>GENDER: Female</p>
+    				<p>RACE: Ginger bread</p>
+                    <p>BIO: She is a sweet innocent ginger bread that was made by the muffin man. She has two buttons that you shouldn't touch or else she will get ANGRY.</p>
+                </div>
+    	</div>
+    	<div class="speech-bubble">
+                <img class="avatar img-fluid" src="https://s1.piq.land/2015/02/15/pHzF6FIP6PNPAihK6bfLfynQ_400x400.png" alt="cookie cat">
+                <div class="info">
+    		    <h1>COOKIE CAT</h1>
+    	
+    		    <p>EMAIL: <a class="email" href="mailto:Cookicat@Cookie.com?subject=feedback">Cookiecat@Cookie.com</a></p>
+                    <p>GENDER: Male</p>
+    			    <p>RACE: Some kind of cookie and a cat.</p>
+                    <p>BIO: He left his family and home to escape interstellar war. He now sells his famous ice cream sandwich.</p>
+                </div>
+		</div>
+		<div class="speech-bubble">
+                <img id="Dino" class="avatar" src="Assets/Dino1.jpg" alt="ginger bread">
+                <div class="info">
+				<h1>DINO THE MASCOT!</h1>
+
+				<p>GENDER: Unknown</p>
+				<p>SPECIES: A cute loveable Dino!</p>
+				<p>FAVORITE COOKIE: Sprinkled COOKIEs</p>
+    		    <p>BIO: Dino the loveable COOKIE lover! He's worried if you don't like COOKIEs! Hover him to tell him you love COOKIEs!</p>
+                </div>
+    	</div>
+	</div>
+
+	<div class="internal_link"><a href="#top">
+			<img class="internal_logo" src="https://s1.piq.land/2018/09/02/HvThGxAi0AMu2vBJhQObBZuG_400x400.png" alt="Cookie">
+			<p>Top</p>
+			</a>
+	</div>
+	<div class="footer">
+		<p>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use</p>
+		<p id="lastmod"></p>
+	</div>
+	
+	<!--ALL of the javascript are loaded last to enable loading the page first-->
+	<!--Username script-->
+	<script src="username.js"></script>
+
+	<!--Mouse over Event-->
+	<script>
+			//This is set by default
+			function MouseOut() {
+				document.getElementById("Dino").src = "Assets/Dino1.jpg";
+			}
+			//Change the picture when mouse is over it
+			function mouseOver() {
+				document.getElementById("Dino").src = "Assets/Dino2.jpg";
+			}
+			//Get the Id
+			//If I used window, all of the pages will trigger the event
+			document.getElementById("Dino").addEventListener("mouseover", mouseOver);
+			document.getElementById("Dino").addEventListener("mouseout",MouseOut);
+	</script>
+
+	<!--lastmod script-->
+    <script>
+		//prints out the last modification of the page
+		var lastmodded = new Date(document.lastModified);
+		document.getElementById("lastmod").innerHTML = "Last Modified: " + lastmodded;
+	</script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

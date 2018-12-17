@@ -1,0 +1,48 @@
+{
+    "guides": {
+        "guide": [
+            {
+                "type": "Flour",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            },
+            {
+                "type": "Granula",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            },
+            {
+                "type": "Brown Sugar",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            },
+            {
+                "type": "Butter",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            },
+            {
+                "type": "Baking Soda",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            },
+            {
+                "type": "Baking Powder",
+                "shape": "Circle",
+                "topping": "Any",
+                "good": "Yes",
+                "milk": "Yes"
+            }
+        ]
+    }
+}

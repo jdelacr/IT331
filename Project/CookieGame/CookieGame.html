@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cookie Game!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="GameStyle.css">
+    
+  </head>
+  <body>
+        <a id="cookiebutton" href="#" onclick="start()"><img id="CookieClick" src="../Assets/Cookie_re.png" alt="Cookie button"></a>
+        
+        <div class="Score">
+            <form>
+                <table>
+                    <tr>
+                        <td><h4>Score:</h4></td>
+                        <td><input type="text" name="scoretext" id="Scorenum" placeholder="Score"> </td>
+                    </tr>
+                </table>
+            </form>
+            <h5 id="message"></h5>
+            <div class="gridPlayer">
+                <div class="grid"><h4>Player:</h4></div>
+                <div class="grid"><h4 id="Player"></h4></div>
+                <div class="grid"><button onclick="changeplayer()">New Player</button></div>
+                <div class="grid"><button onclick="CookieButton()">Change Cookie</button></div>
+                <div class="grid"><button onclick="ChangeBackground()">Change Background</button></div>
+            </div>
+        </div>
+
+
+        <!--Script for displaying the user!-->
+        <script>
+        var x;
+        document.getElementById("Player").innerHTML = localStorage.getItem("player");
+        //Check if the user exist or not
+        if (localStorage.getItem("player") == null) {
+            x = prompt("Enter Player's Name!");
+            localStorage.setItem("player", x);
+        }
+        //If not, then continue to display the stored player
+        else {
+            document.getElementById("Player").innerHTML = localStorage.getItem("player");
+        }
+    </script>
+
+
+    <!-- Cookie Clicker JavaScript -->
+    <script src="Cookiegame.js"></script>
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </body>
+</html>

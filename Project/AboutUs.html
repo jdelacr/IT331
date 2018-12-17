@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>About Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<!--BootstrapCDN latest code at getboostrap.com-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link href="cookies.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+<script>
+    function start(){
+        var button = document.getElementById("reveal").addEventListener("click",reveal,false);
+    }
+
+    function reveal(){
+        //starts removing the lists first
+        remove();
+
+        //Adding a picture here and text
+        var newNode = document.createElement("img");
+        var breakNode = document.createElement("br");
+        var treat = document.createElement("p");
+        var treatTXT = document.createTextNode("Treat yourself an Cookie Ice Cream!");
+        //setting the text
+        treat.appendChild(treatTXT);
+
+        //Set the image
+        newNode.src = "Assets/cookie_sandwich.jpg";
+        
+        //print it out under list4
+        var CookieNode = document.getElementById("list4");
+        CookieNode.appendChild(breakNode);
+        CookieNode.appendChild(newNode);CookieNode.appendChild(treat);
+    }
+    // function to remove list 1-3
+    function remove(){
+        var CupcakeNode = document.getElementById("list1");
+        var MuffinNode = document.getElementById("list2");
+        var DonutNode = document.getElementById("list3");
+        //remove the lists
+        CupcakeNode.parentNode.removeChild(CupcakeNode);
+        MuffinNode.parentNode.removeChild(MuffinNode);
+        DonutNode.parentNode.removeChild(DonutNode);
+    }
+    window.addEventListener("load",start, false);
+</script>
+<!--JSON data set-->
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryData.js"></script>
+<script src="SpryAssets/SpryJSONDataSet.js"></script>
+<script>
+    var CookieGuide = new Spry.Data.JSONDataSet("CookieGuide.json", {path:"guides.guide"});
+</script>
+
+</head>
+<body>
+    <!--Navigation-->
+    <nav id="top">
+            <ul>
+                <li><img id="logo" src="http://res.publicdomainfiles.com/pdf_view/129/13968371414517.png" alt="Cookie Logo"></li>
+                <li class="nav_bttn"><a href="index.html" title="">Home</a></li>
+                <li class="nav_bttn"><a href="AboutUs.html" title="">About</a></li>
+                <li class="nav_bttn"><a href="Contacts.html" title="">Contacts</a></li>
+                <li class="nav_bttn"><a href="Sources.html" title="">Sources</a></li>
+                <li class="nav_bttn"><a href="Gallery.html" title="">Gallery</a></li>
+                <li class="nav_bttn"><a href="Sites.html" title="">Sites</a></li>
+                <li id="username" class="nav_bttn"><h5 id="user"></h5><a href="#" onclick="changeuser()">change</a></li>
+    
+            </ul>
+        </nav>
+        <!--Content-->
+	<div class="content">
+		<h1>About COOKIE</h1>
+        <p>To understand COOKIE, you must have basic knowledge about each type of cookies. Below is our lousy table guide on which COOKIE is the best.</p>
+        <button>CLICK MEH!!</button>
+        <div spry:region="CookieGuide" class="cookie_guide">
+        <table class="guide">
+            <tr>
+                <td class="row_guide" rowspan="2"><img class="cookie_table" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Emojione1_1F36A.svg/1024px-Emojione1_1F36A.svg.png" alt="Cookie"></td>
+                <td class="row_guide" colspan="4"><h1>OUR CHEAP COOKIE GUIDE</h1></td>
+            </tr>
+            <tr>
+                <td>Shape</td>
+                <td>Toppings</td>
+                <td>Is it good?</td>
+                <td>Great with milk?</td>
+            </tr>
+            <tr spry:repeat="CookieGuide">
+                <td class="row_guide">{type}</td>
+                <td>{shape}</td>
+                <td>{topping}</td>
+                <td>{good}</td>
+                <td>{milk}</td>
+            </tr>
+        </table>
+    </div>
+    <p>The purpose of this website is to inform you the greatness of our overlor--- I mean the greatness of COOKIE. Eating COOKIE certainly makes you FAT, but atleast you ate some! Spread the joy of buying or making a COOKIE to your family. </p>
+    <p>Here in COOKIE, we follow a honors code and they are:</p>
+    <ol class="honors">
+        <li>ENJOY COOKIEs</li>
+        <li>MAKE COOKIEs</li>
+        <li>EAT THE COOKIEs</li>
+        <li>DIE FOR THE COOKIE</li>
+    </ol>
+    <p>NOTE: this is a project. NOT. A. CULT.</p>
+    <p>We cannot stress how many times we have been called by the police. It is starting to get harder for us to hide our COOKIEs from them.</p>
+    <form action="#" method="post">
+        <fieldset id="QuestionForm" >
+            <legend>Test your knowledge!</legend>
+            <p id="Q">To prove your knowledge to COOKIEs, which of these can become a sandwich?</p>
+            <h3 id="list1">Cupcake</h3>
+            <h3 id="list2">Muffin</h3>
+            <h3 id="list3">Donuts</h3>
+            <h3 id="list4">Cookies</h3>
+            <input type="button" value="Reveal the Answer!" id="reveal">
+        </fieldset>
+    </form>
+
+
+    </div>  
+
+    <div class="internal_link"><a href="#top">
+            <img class="internal_logo" src="https://s1.piq.land/2018/09/02/HvThGxAi0AMu2vBJhQObBZuG_400x400.png" alt="Cookie">
+            <p>Top</p>
+            </a>
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+        <p>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use</p>
+        <p id="lastmod"></p>
+    </div>
+
+    <!--ALL of the javascript are loaded last to enable loading the page first-->
+    <!--Username script-->
+    <script src="username.js"></script>
+    <!--lastmod script-->
+    <script>
+        //prints out the last modification of the page
+        var lastmodded = new Date(document.lastModified);
+        document.getElementById("lastmod").innerHTML = "Last Modified: " + lastmodded;
+    </script>
+
+    <script>
+        //This toggles to show and hide the table
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("div.cookie_guide").toggle("slow");
+            });
+        });
+        
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

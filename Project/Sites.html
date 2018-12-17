@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Website Recommendations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+<!--BootstrapCDN latest code at getboostrap.com-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link href="cookies.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Navigation-->
+    <nav id="top">
+    	<ul>
+    		<li><img id="logo" src="http://res.publicdomainfiles.com/pdf_view/129/13968371414517.png" alt="Cookie Logo"></li>
+    		<li class="nav_bttn"><a href="index.html" title="">Home</a></li>
+            <li class="nav_bttn"><a href="AboutUs.html" title="">About</a></li>
+            <li class="nav_bttn"><a href="Contacts.html" title="">Contacts</a></li>
+            <li class="nav_bttn"><a href="Sources.html" title="">Sources</a></li>
+            <li class="nav_bttn"><a href="Gallery.html" title="">Gallery</a></li>
+            <li class="nav_bttn"><a href="Sites.html" title="">Sites</a></li>
+            <li id="username" class="nav_bttn"><h5 id="user"></h5><a href="#" onclick="changeuser()">change</a></li>
+    	</ul>
+    </nav>
+    <!--Content-->
+    <div class="content">
+        <h1>You should check out these websites!</h1>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Pinterest</h3>
+                <p class="card-text">Your go to cookie recipe!</p>
+                <button id="pinterest" class="OpenS">Open</button>
+                <button id="Closedpin" class="ClosedS" disabled="disabled">Close</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Foursquare</h3>
+                <p class="card-text">Need to find the nearest cookie shop?</p>
+                <button id="foursquare" class="OpenS">Open</button>
+                <button id="Closedfour" class="ClosedS" disabled="disabled">Close</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+                <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Instagram</h3>
+                    <p class="card-text">Share your cookies!</p>
+                    <button id="instagram" class="OpenS">Open</button>
+                    <button id="Closedinsta" class="ClosedS" disabled="disabled">Close</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Cookie Clicker!</h3>
+                    <p class="card-text">Cookie Clicker Made by Justyn!</p>
+                    <button id="Clicker" class="OpenS">Open</button>
+                    <button id="Closedgame" class="ClosedS" disabled="disabled">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+    	
+    </div>
+
+    <div class="internal_link"><a href="#top">
+        <img class="internal_logo" src="https://s1.piq.land/2018/09/02/HvThGxAi0AMu2vBJhQObBZuG_400x400.png" alt="Cookie">
+        <p>Top</p>
+        </a>
+    </div>
+    <div class="footer">
+        <p>This website is developed as an educational project. Certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use</p>
+        <p id="lastmod"></p>
+    </div>
+
+    <!--ALL of the javascript are loaded last to enable loading the page first-->
+    <!--Username script-->
+    <script src="username.js"></script>
+    <!--This is for the jquery for background hover-->
+<script>
+        $(document).ready(function(){
+            //set the gradient background when mouse enter
+            $("div.card-body").mouseenter(function(){
+                //we set the css and fade of the gradient based on which div is hovered
+                $(this).css("background-image" , "linear-gradient(to bottom right, pink, white)");
+            });
+
+            //set the gradient background when mouse leaves the card
+            $("div.card-body").mouseleave(function(){
+                $(this).css("background-image" , "");
+            });
+            
+        });
+</script>
+
+
+    <!--lastmod script-->
+    <script>
+        //prints out the last modification of the page
+        var lastmodded = new Date(document.lastModified);
+        document.getElementById("lastmod").innerHTML = "Last Modified: " + lastmodded;
+    </script>
+
+
+    <!--Opening and closing browser script-->
+    <script>
+        var browser;
+        function start() {
+            //create an event listener when the user clicks the open button
+            document.getElementById("pinterest").addEventListener("click", pin,false);
+            document.getElementById("foursquare").addEventListener("click", four,false);
+            document.getElementById("instagram").addEventListener("click", insta,false);
+            document.getElementById("Clicker").addEventListener("click", game,false);
+
+
+            //This is an event when the for closed windows
+            document.getElementById("Closedpin").addEventListener("click",Closepin,false);
+            document.getElementById("Closedfour").addEventListener("click",Closefour,false);
+            document.getElementById("Closedinsta").addEventListener("click",Closeinsta,false);
+            document.getElementById("Closedgame").addEventListener("click",Closedgame,false);
+
+        }
+        //function for opening pinterest
+        function pin() {
+            browser= window.open("https://www.pinterest.com/allrecipes/cookie-recipes/", "", "menubar, toolbar, height=1000,width=1000");
+            document.getElementById("Closedpin").disabled = false;
+        }
+        //function for opening foursquare
+        function four() {
+            browser= window.open("https://foursquare.com/", "", "menubar, toolbar, height=1000,width=1000");
+            document.getElementById("Closedfour").disabled = false;
+        }
+        //function for opening instagram
+        function insta() {
+            browser= window.open("https://www.instagram.com/explore/tags/cookies/?hl=en", "", "menubar, toolbar, height=1000,width=1000");
+            document.getElementById("Closedinsta").disabled = false;
+        }
+        //function for opening the Cookie Clicker
+        function game() {
+            browser= window.open("CookieGame/CookieGame.html", "", "height=450, width=400");
+            document.getElementById("Closedgame").disabled = false;
+        }
+
+        //function for closing and verifying pinterest
+        function Closepin() {
+            if (browser.closed) {
+                alert("Pinterest is already closed");
+            }
+            else {
+                browser.close();
+            }
+                
+        }
+        //function for closing and veryfying Foursquare
+        function Closefour() {
+            if (browser.closed) {
+                alert("Foursquare is already closed");
+            }
+            else {
+                browser.close();
+            }
+                
+        }
+        //Function for closing and verying Instagram
+        function Closeinsta() {
+            if (browser.closed) {
+                alert("Instagram is already closed");
+            }
+            else {
+                browser.close();
+            }
+                
+        }
+        //Function for closing and verying the game
+        function Closedgame() {
+            if (browser.closed) {
+                alert("Cookie Clicker is already closed");
+            }
+            else {
+                browser.close();
+            }
+        }
+        window.addEventListener("load", start, false);
+    </script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>
